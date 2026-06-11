@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Stop old container
+      shell: docker stop foodwebsite
+      ignore_errors: yes
+
+    - name: Remove old container
+      shell: docker rm foodwebsite
+      ignore_errors: yes
+
+    - name: Run new container
+      shell: docker run -d -p 8080:80 --name foodwebsite foodwebsite
