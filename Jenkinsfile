@@ -12,7 +12,7 @@ pipeline {
 
         stage('Deploy Using Ansible') {
             steps {
-                bat 'wsl ansible-playbook deploy.yml'
+                bat 'wsl ansible-playbook /mnt/c/ProgramData/Jenkins/.jenkins/workspace/FoodWebsitePipeline/deploy.yml'
             }
         }
 
